@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+
+{% block title %}Route List{% endblock %}
+
+{% block content %}
+<h1>All Routes</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Short Name</th>
+            <th>Long Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for route in routes %}
+        <tr>
+            <td>{{ route.route_short_name }}</td>
+            <td>{{ route.route_long_name }}</td>
+            <td>
+                <a href="{% url 'route_update' route.route_id %}">Edit</a> | 
+                <a href="{% url 'route_delete' route.route_id %}">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No routes available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'route_create' %}">Add New Route</a>
+{% endblock %}

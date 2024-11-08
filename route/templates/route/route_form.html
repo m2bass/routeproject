@@ -1,0 +1,16 @@
+{% extends 'home.html' %}  <!-- Ensure this extends the correct path to home.html -->
+
+{% block title %}Create or Update Route{% endblock %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Update Route{% else %}Create Route{% endif %}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- This renders the form fields automatically -->
+
+        <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+    </form>
+
+    <a href="{% url 'route_list' %}">Cancel</a>
+{% endblock %}

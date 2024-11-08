@@ -1,0 +1,61 @@
+.bg-blue {
+    background-color: #CCE3F3;
+}
+
+.bg-footer-blue {
+    background-color: #004587;
+    padding: 20px 0;
+    margin-top: 0;
+}
+
+.blue-text {
+    color:#004587;
+}
+
+.btn-outline-primary {
+    color: #004587; /* Text color */
+    background-color: transparent; /* Background remains transparent */
+    border-color: #004587; /* Border color */
+}
+
+.btn-outline-primary:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #004587; /* Background color on hover */
+    border-color: #004587; /* Border color on hover */
+}
+
+.btn-orange {
+    color: #fff; /* Text color */
+    background-color: #FE6602; /* Background color */
+}
+
+.btn-orange:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #e55a02; /* Slightly darker shade for hover effect */
+    border-color: #e55a02; /* Slightly darker border for hover effect */
+}
+
+.btn-yellow {
+    color: #004587; /* Text color */
+    background-color: #FDC104; /* Background color */
+    width: 150px;
+}
+.btn-yellow:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #e55a02; /* Slightly darker shade for hover effect */
+    border-color: #e55a02; /* Slightly darker border for hover effect */
+}
+
+.custom-btn {
+    width: 100px; /* Set to your desired width */
+}
+
+.bold-orange-text {
+    color: #FE6602;
+    font-weight: 700; /* Bold */
+}
+
+.bold-yellow-text {
+    color: #FDC104;
+    font-weight: 700; /* Bold */
+}
