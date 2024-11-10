@@ -24,15 +24,15 @@
     border-color: #A7112A; /* Border color on hover */
 }
 
-.btn-orange {
+.btn-primary {
     color: #fff; /* Text color */
-    background-color: #FE6602; /* Background color */
+    background-color: #A7112A; /* Background color */
 }
 
-.btn-orange:hover {
+.btn-primary:hover {
     color: #fff; /* Text color on hover */
-    background-color: #e55a02; /* Slightly darker shade for hover effect */
-    border-color: #e55a02; /* Slightly darker border for hover effect */
+    background-color: #A7112A; /* Slightly darker shade for hover effect */
+    border-color: #A7112A; /* Slightly darker border for hover effect */
 }
 
 .btn-yellow {
@@ -50,8 +50,8 @@
     width: 100px; /* Set to your desired width */
 }
 
-.bold-orange-text {
-    color: #FE6602;
+.bold-red-text {
+    color: #A7112A;
     font-weight: 700; /* Bold */
 }
 
