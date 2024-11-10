@@ -1,27 +1,27 @@
-.bg-blue {
-    background-color: #CCE3F3;
+.bg-top {
+    background-color: #FDE2E3;
 }
 
-.bg-footer-blue {
-    background-color: #004587;
+.bg-footer-red {
+    background-color: #A7112A;
     padding: 20px 0;
     margin-top: 0;
 }
 
-.blue-text {
-    color:#004587;
+.primary-text {
+    color:#A7112A;
 }
 
 .btn-outline-primary {
-    color: #004587; /* Text color */
+    color: #A7112A; /* Text color */
     background-color: transparent; /* Background remains transparent */
-    border-color: #004587; /* Border color */
+    border-color: #A7112A; /* Border color */
 }
 
 .btn-outline-primary:hover {
     color: #fff; /* Change text color on hover */
-    background-color: #004587; /* Background color on hover */
-    border-color: #004587; /* Border color on hover */
+    background-color: #A7112A; /* Background color on hover */
+    border-color: #A7112A; /* Border color on hover */
 }
 
 .btn-orange {

@@ -15,7 +15,7 @@
 <body>
     <!-- Navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+        <nav class="navbar navbar-expand-lg navbar-light bg-top">
             <div class="container"> <!-- Change to container for centering -->
                 <!-- Left Section: Logo -->
                 <a class="navbar-brand" href="#">
@@ -57,26 +57,27 @@
     
 
      <!-- Main Content -->
-    <main class="container mt-5">
+    <main class="container">
         {% block content %}
         <!-- Homepage-specific content can go here -->
         <section class="row">
-            <div class="col-md-4 d-flex flex-column justify-content-center">
-                <h1 class="display-4 blue-text fw-bold">WELCOME TO</h1>
-                <h1 class="display-2 bold-orange-text">RoutesApp</h1>
+            <div class="col-md-4
+             d-flex flex-column justify-content-center">
+                <h1 class="display-5 blue-text fw-bold">WELCOME TO</h1>
+                <h1 class="display-3 bold-orange-text">RoutesApp</h1>
                 <h5 class="blue-text py-2">Your journey starts here!</h5>
                 <a href="{% url 'route_list' %}" class="btn btn-yellow mt-3 custom-btn2">Get Started</a>
             </div>
-            <div class="col-md-8">
-                <img src="{% static 'route/images/hero.svg' %}" alt="Hero Image" class="img-fluid">
+            <div class="col-md-8 pt-5">
+                <img src="{% static 'route/images/hero-img.svg' %}" alt="Hero Image" class="img-fluid">
             </div>
         </section>
         {% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="text-center mt-5">
-        <div class= "bg-footer-blue">
+    <footer class="text-center">
+        <div class= "bg-footer-red">
         <p>&copy; 2024 Route Project</p>
         </div>
     </footer>
