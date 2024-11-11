@@ -99,6 +99,8 @@ footer {
 
 /* General layout and spacing */
 .content-container {
+    background-image: url('/static/images/hero2.svg');
+    background-size: cover;
     padding: 30px;
 }
 /*
