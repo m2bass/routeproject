@@ -66,6 +66,16 @@
     width: 100px; /* Set to your desired width */
 }
 
+.custom-btn.btn-outline-primary {
+    border-color: none;
+    color:#A7112A;
+}
+
+.custom-btn.btn-outline-primary:hover {
+    border-color:#A7112A;
+    color: #FDE2E3;
+}
+
 .bold-red-text {
     color: #A7112A;
     font-weight: 700; /* Bold */
