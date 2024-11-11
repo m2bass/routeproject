@@ -3,18 +3,16 @@
 {% block title %}Route List{% endblock %}
 
 {% block content %}
-<div class="content-container" style="background-image: url('/static/images/hero2.svg'); background-size: cover; padding: 30px;">
-    <!-- Bootstrap Row -->
+<div class="content-container">
     <div class="row">
-        
         <!-- Route Dropdowns Column -->
         <div class="col-md-3">
             <h1>Custom Routes</h1>
             
             <!-- Route to NSCC Dropdown -->
-            <div style="margin-bottom: 20px;">
-                <label for="to-nscc-dropdown" style="font-size: 18px; font-weight: bold;">Select Route to NSCC:</label>
-                <select id="to-nscc-dropdown" name="route_to_nscc" style="padding: 10px; font-size: 16px; width: 100%;">
+            <div class="dropdown-container">
+                <label for="to-nscc-dropdown" class="dropdown-label">Select Route to NSCC:</label>
+                <select id="to-nscc-dropdown" name="route_to_nscc" class="dropdown">
                     <option value="">-- Select a Route to NSCC --</option>
                     <option value="halifax_to_nscc">Halifax to NSCC</option>
                     <option value="antigonish_to_nscc">Antigonish to NSCC</option>
@@ -28,9 +26,9 @@
             </div>
 
             <!-- Route from NSCC Dropdown -->
-            <div style="margin-bottom: 20px;">
-                <label for="from-nscc-dropdown" style="font-size: 18px; font-weight: bold;">Select Route from NSCC:</label>
-                <select id="from-nscc-dropdown" name="route_from_nscc" style="padding: 10px; font-size: 16px; width: 100%;">
+            <div class="dropdown-container">
+                <label for="from-nscc-dropdown" class="dropdown-label">Select Route from NSCC:</label>
+                <select id="from-nscc-dropdown" name="route_from_nscc" class="dropdown">
                     <option value="">-- Select a Route from NSCC --</option>
                     <option value="nscc_to_halifax">NSCC to Halifax</option>
                     <option value="nscc_to_antigonish">NSCC to Antigonish</option>
@@ -44,54 +42,49 @@
             </div>
 
             <!-- Search/Submit Button -->
-            <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px;">
-                Search Routes
-            </button>
+            <button type="submit" class="search-button">Search Routes</button>
         </div>
         
         <!-- Routes Table Column -->
         <div class="col-md-6">
             <h1>Routes List</h1>
-            <table style="width: 100%; border-collapse: collapse;">
+            <table class="route-table">
                 <thead>
                     <tr>
-                        <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Short Name</th>
-                        <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Long Name</th>
-                        <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Actions</th>
+                        <th>Short Name</th>
+                        <th>Long Name</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for route in routes %}
                     <tr>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">{{ route.route_short_name }}</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">{{ route.route_long_name }}</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">
+                        <td>{{ route.route_short_name }}</td>
+                        <td>{{ route.route_long_name }}</td>
+                        <td>
                             <a href="{% url 'route_update' route.route_id %}">Edit</a> | 
                             <a href="{% url 'route_delete' route.route_id %}">Delete</a>
                         </td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="3" style="text-align: center; padding: 10px;">No routes available.</td>
+                        <td colspan="3" class="no-routes">No routes available.</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
             
             <!-- Add New Route Button -->
-            <a href="{% url 'route_create' %}" class="btn btn-primary" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">
-                Create Your Own Route
-            </a>
+            <a href="{% url 'route_create' %}" class="create-route-button">Create Your Own Route</a>
         </div>
         
         <!-- Static Map Image Column -->
         <div class="col-md-3">
             <h1>Map</h1>
-            <div class="map-container" style="height: 400px; width: 100%; border: 1px solid #ddd;">
-                <img src="/static/route/images/nscc-map.jpg" alt="NSCC Location Map" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="map-container">
+                <img src="/static/route/images/nscc-map.jpg" alt="NSCC Location Map" class="map-image">
             </div>
         </div>
-        
     </div>
 </div>
 {% endblock %}
