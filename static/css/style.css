@@ -49,6 +49,13 @@
     background-color: #FDA0A6; /* Background color */
     width: 150px;
 }
+
+
+.btn-pry:hover {
+    color: #fff; /* Text color */
+    background-color: #A7112A; /* Background color */
+    width: 150px;
+}
 .btn-yellow:hover {
     color: #fff; /* Text color on hover */
     background-color: #e55a02; /* Slightly darker shade for hover effect */
