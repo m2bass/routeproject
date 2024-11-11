@@ -44,9 +44,9 @@
     border-color: #A7112A; /* Slightly darker border for hover effect */
 }
 
-.btn-yellow {
-    color: #004587; /* Text color */
-    background-color: #FDC104; /* Background color */
+.btn-pry {
+    color: #232A30; /* Text color */
+    background-color: #FDA0A6; /* Background color */
     width: 150px;
 }
 .btn-yellow:hover {
