@@ -216,7 +216,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Add borders to the columns */
+/* Apply borders only to columns in the main row (not footer) */
 .row > .col-md-3, .row > .col-md-6 {
     border: 1px solid #ccc; /* Light gray border */
     padding: 15px; /* Add padding inside the columns */
@@ -231,7 +231,12 @@ footer {
     border-right: none;
 }
 
-/* Optional: Add space between columns */
+/* Optional: Add space between columns 
 .row {
-    gap: 15px; /* You can adjust this value to control the space between columns */
+    gap: 15px; /* You can adjust this value to control the space between columns 
+}*/
+
+/* Add specific styling to footer if needed */
+footer {
+    border: none; /* Ensure no border in footer */
 }
