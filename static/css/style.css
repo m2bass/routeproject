@@ -66,12 +66,12 @@
     width: 100px; /* Set to your desired width */
 }
 
-.custom-btn.btn-outline-primary {
+.custom-btn.btn-primary {
     border-color: none;
     color:#A7112A;
 }
 
-.custom-btn.btn-outline-primary:hover {
+.custom-btn.btn-primary:hover {
     border-color:#A7112A;
     color: #FDE2E3;
 }
