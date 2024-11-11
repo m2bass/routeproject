@@ -7,32 +7,49 @@
 <div class="content-container" style="background-image: url('/static/images/hero2.svg'); background-size: cover; padding: 30px;">
 
     <h1>All Routes</h1>
-    
-    <!-- Dropdown for routes to/from NSCC with aesthetic formatting -->
-    <label for="route-dropdown" style="font-size: 18px; font-weight: bold;">Select Route to/from NSCC:</label>
-    <select id="route-dropdown" name="route" style="padding: 10px; font-size: 16px; width: 100%; max-width: 500px;">
-        <option value="">-- Select a Route --</option>
 
-        {% for route in routes %}
-            {% if route.origin == "NSCC" %}
-                <option value="{{ route.route_id }}">
-                    <strong>{{ route.route_short_name }}</strong> - {{ route.route_long_name }} 
-                    (From NSCC to {{ route.destination }})
-                </option>
-            {% elif route.destination == "NSCC" %}
-                <option value="{{ route.route_id }}">
-                    <strong>{{ route.route_short_name }}</strong> - {{ route.route_long_name }} 
-                    (To NSCC from {{ route.origin }})
-                </option>
-            {% else %}
-                <option value="{{ route.route_id }}">
-                    <strong>{{ route.route_short_name }}</strong> - {{ route.route_long_name }} 
-                    ({{ route.origin }} to {{ route.destination }})
-                </option>
-            {% endif %}
-        {% endfor %}
-    </select>
+    <!-- Route to NSCC Dropdown -->
+    <div style="margin-bottom: 20px;">
+        <label for="to-nscc-dropdown" style="font-size: 18px; font-weight: bold;">Select Route to NSCC:</label>
+        <select id="to-nscc-dropdown" name="route_to_nscc" style="padding: 10px; font-size: 16px; width: 100%; max-width: 500px;">
+            <option value="">-- Select a Route to NSCC --</option>
+            <!-- Example of destinations to NSCC -->
+            <option value="halifax_to_nscc">Halifax to NSCC</option>
+            <option value="antigonish_to_nscc">Antigonish to NSCC</option>
+            <option value="sydney_to_nscc">Sydney to NSCC</option>
+            <option value="dartmouth_to_nscc">Dartmouth to NSCC</option>
+            <option value="newglasgow_to_nscc">New Glasgow to NSCC</option>
+            <option value="truro_to_nscc">Truro to NSCC</option>
+            <option value="newminas_to_nscc">New Minas to NSCC</option>
+            <option value="wolfville_to_nscc">Wolfville to NSCC</option>
+        </select>
+    </div>
 
+    <!-- Route from NSCC Dropdown -->
+    <div style="margin-bottom: 20px;">
+        <label for="from-nscc-dropdown" style="font-size: 18px; font-weight: bold;">Select Route from NSCC:</label>
+        <select id="from-nscc-dropdown" name="route_from_nscc" style="padding: 10px; font-size: 16px; width: 100%; max-width: 500px;">
+            <option value="">-- Select a Route from NSCC --</option>
+            <!-- Example of origins from NSCC -->
+            <option value="nscc_to_halifax">NSCC to Halifax</option>
+            <option value="nscc_to_antigonish">NSCC to Antigonish</option>
+            <option value="nscc_to_sydney">NSCC to Sydney</option>
+            <option value="nscc_to_dartmouth">NSCC to Dartmouth</option>
+            <option value="nscc_to_newglasgow">NSCC to New Glasgow</option>
+            <option value="nscc_to_truro">NSCC to Truro</option>
+            <option value="nscc_to_newminas">NSCC to New Minas</option>
+            <option value="nscc_to_wolfville">NSCC to Wolfville</option>
+        </select>
+    </div>
+
+    <!-- Search/Submit Button -->
+    <div style="margin-bottom: 20px;">
+        <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px;">
+            Search Routes
+        </button>
+    </div>
+
+    <!-- Display Routes Table -->
     <table style="margin-top: 20px; width: 100%; border-collapse: collapse;">
         <thead>
             <tr>
@@ -58,9 +75,11 @@
             {% endfor %}
         </tbody>
     </table>
-    
-    <!-- Add new route button -->
-    <a href="{% url 'route_create' %}" class="btn btn-primary" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Add New Route</a>
+
+    <!-- Add New Route Button -->
+    <a href="{% url 'route_create' %}" class="btn btn-primary" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">
+        Add New Route
+    </a>
 
 </div>
 {% endblock %}
