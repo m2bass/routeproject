@@ -67,8 +67,8 @@
 }
 
 .custom-btn.btn-primary {
-    border-color: none;
-    color:#A7112A;
+    border-color: #A7112A;
+    color:#FDE2E3;
 }
 
 .custom-btn.btn-primary:hover {
