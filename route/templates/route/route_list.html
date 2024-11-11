@@ -12,9 +12,9 @@
             <h1>Custom Routes</h1>
             
             <!-- Route to NSCC Dropdown -->
-            <div">
-                <label for="to-nscc-dropdown">Select Route to NSCC:</label>
-                <select id="to-nscc-dropdown" name="route_to_nscc">
+            <div style="margin-bottom: 20px;">
+                <label for="to-nscc-dropdown" style="font-size: 18px; font-weight: bold;">Select Route to NSCC:</label>
+                <select id="to-nscc-dropdown" name="route_to_nscc" style="padding: 10px; font-size: 16px; width: 100%;">
                     <option value="">-- Select a Route to NSCC --</option>
                     <option value="halifax_to_nscc">Halifax to NSCC</option>
                     <option value="antigonish_to_nscc">Antigonish to NSCC</option>
@@ -29,8 +29,8 @@
 
             <!-- Route from NSCC Dropdown -->
             <div style="margin-bottom: 20px;">
-                <label for="from-nscc-dropdown">Select Route from NSCC:</label>
-                <select id="from-nscc-dropdown" name="route_from_nscc">
+                <label for="from-nscc-dropdown" style="font-size: 18px; font-weight: bold;">Select Route from NSCC:</label>
+                <select id="from-nscc-dropdown" name="route_from_nscc" style="padding: 10px; font-size: 16px; width: 100%;">
                     <option value="">-- Select a Route from NSCC --</option>
                     <option value="nscc_to_halifax">NSCC to Halifax</option>
                     <option value="nscc_to_antigonish">NSCC to Antigonish</option>
@@ -44,7 +44,7 @@
             </div>
 
             <!-- Search/Submit Button -->
-            <button type="submit">
+            <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px;">
                 Search Routes
             </button>
         </div>
@@ -55,24 +55,24 @@
             <table style="width: 100%; border-collapse: collapse;">
                 <thead>
                     <tr>
-                        <th>Short Name</th>
-                        <th>Long Name</th>
-                        <th>Actions</th>
+                        <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Short Name</th>
+                        <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Long Name</th>
+                        <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for route in routes %}
                     <tr>
-                        <td>{{ route.route_short_name }}</td>
-                        <td>{{ route.route_long_name }}</td>
-                        <td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">{{ route.route_short_name }}</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">{{ route.route_long_name }}</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">
                             <a href="{% url 'route_update' route.route_id %}">Edit</a> | 
                             <a href="{% url 'route_delete' route.route_id %}">Delete</a>
                         </td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="3" style="text-align: center;">No routes available.</td>
+                        <td colspan="3" style="text-align: center; padding: 10px;">No routes available.</td>
                     </tr>
                     {% endfor %}
                 </tbody>
