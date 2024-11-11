@@ -8,46 +8,59 @@
 
     <h1>All Routes</h1>
     
-    <!-- Dropdown for routes from/to NSCC with destinations -->
-    <label for="route-dropdown">Select Route to/from NSCC:</label>
-    <select id="route-dropdown" name="route">
+    <!-- Dropdown for routes to/from NSCC with aesthetic formatting -->
+    <label for="route-dropdown" style="font-size: 18px; font-weight: bold;">Select Route to/from NSCC:</label>
+    <select id="route-dropdown" name="route" style="padding: 10px; font-size: 16px; width: 100%; max-width: 500px;">
         <option value="">-- Select a Route --</option>
+
         {% for route in routes %}
-            <option value="{{ route.route_id }}">
-                {{ route.route_short_name }} - {{ route.route_long_name }} 
-                ({{ route.origin }} to {{ route.destination }})
-            </option>
+            {% if route.origin == "NSCC" %}
+                <option value="{{ route.route_id }}">
+                    <strong>{{ route.route_short_name }}</strong> - {{ route.route_long_name }} 
+                    (From NSCC to {{ route.destination }})
+                </option>
+            {% elif route.destination == "NSCC" %}
+                <option value="{{ route.route_id }}">
+                    <strong>{{ route.route_short_name }}</strong> - {{ route.route_long_name }} 
+                    (To NSCC from {{ route.origin }})
+                </option>
+            {% else %}
+                <option value="{{ route.route_id }}">
+                    <strong>{{ route.route_short_name }}</strong> - {{ route.route_long_name }} 
+                    ({{ route.origin }} to {{ route.destination }})
+                </option>
+            {% endif %}
         {% endfor %}
     </select>
 
-    <table>
+    <table style="margin-top: 20px; width: 100%; border-collapse: collapse;">
         <thead>
             <tr>
-                <th>Short Name</th>
-                <th>Long Name</th>
-                <th>Actions</th>
+                <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Short Name</th>
+                <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Long Name</th>
+                <th style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd;">Actions</th>
             </tr>
         </thead>
         <tbody>
             {% for route in routes %}
             <tr>
-                <td>{{ route.route_short_name }}</td>
-                <td>{{ route.route_long_name }}</td>
-                <td>
+                <td style="padding: 10px; border-bottom: 1px solid #ddd;">{{ route.route_short_name }}</td>
+                <td style="padding: 10px; border-bottom: 1px solid #ddd;">{{ route.route_long_name }}</td>
+                <td style="padding: 10px; border-bottom: 1px solid #ddd;">
                     <a href="{% url 'route_update' route.route_id %}">Edit</a> | 
                     <a href="{% url 'route_delete' route.route_id %}">Delete</a>
                 </td>
             </tr>
             {% empty %}
             <tr>
-                <td colspan="3">No routes available.</td>
+                <td colspan="3" style="text-align: center; padding: 10px;">No routes available.</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
     
     <!-- Add new route button -->
-    <a href="{% url 'route_create' %}" class="btn btn-primary">Add New Route</a>
+    <a href="{% url 'route_create' %}" class="btn btn-primary" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Add New Route</a>
 
 </div>
 {% endblock %}
