@@ -56,12 +56,7 @@
     background-color: #A7112A; /* Background color */
     width: 150px;
 }
-/*.btn-yellow:hover {
-    color: #fff; /* Text color on hover 
-    background-color: #e55a02; /* Slightly darker shade for hover effect 
-    border-color: #e55a02; /* Slightly darker border for hover effect
-}
-*/
+
 .custom-btn {
     width: 100px; /* Set to your desired width */
 }
@@ -82,11 +77,21 @@
     font-weight: 700; /* Bold */
 }
 
-.bold-yellow-text {
+/*.bold-yellow-text {
     color: #FDC104;
-    font-weight: 700; /* Bold */
-}
+    font-weight: 700; /* Bold 
+}*/
 
 footer {
     color: #FDE2E3;
+}
+
+#main-footer a {
+    color: #FDE2E3;
+    text-decoration: none;
+}
+
+#main-footer a:hover {
+    color: #FDE2E3;
+    text-decoration: underline;
 }
