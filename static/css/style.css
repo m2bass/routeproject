@@ -56,12 +56,12 @@
     background-color: #A7112A; /* Background color */
     width: 150px;
 }
-.btn-yellow:hover {
-    color: #fff; /* Text color on hover */
-    background-color: #e55a02; /* Slightly darker shade for hover effect */
-    border-color: #e55a02; /* Slightly darker border for hover effect */
+/*.btn-yellow:hover {
+    color: #fff; /* Text color on hover 
+    background-color: #e55a02; /* Slightly darker shade for hover effect 
+    border-color: #e55a02; /* Slightly darker border for hover effect
 }
-
+*/
 .custom-btn {
     width: 100px; /* Set to your desired width */
 }
@@ -74,6 +74,7 @@
 .custom-btn.btn-primary:hover {
     border-color:#A7112A;
     color: #FDE2E3;
+    background-color: #FDE2E3;
 }
 
 .bold-red-text {
