@@ -150,6 +150,17 @@ footer {
     width:auto
 }
 
+.search-button:hover {
+    padding: 10px 20px;
+    background-color:#A7112A;
+    color:#FDA0A6;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width:auto
+}
+
 /* Table styling */
 .route-table {
     width: 100%;
@@ -177,8 +188,19 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
-    width: auto;
-    
+    width: auto;    
+}
+
+.create-route-button:hover {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#A7112A;
+    color:#FDA0A6;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: auto;    
 }
 
 /* Map container styling */
