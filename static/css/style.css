@@ -227,7 +227,7 @@ footer .row > .col-md-3 {
 
 /* Optional: Add space between columns in the content area */
 .content-container .row {
-    gap: 0px; /* Adjust the value to control the space between columns */
+    gap: 15px; /* Adjust the value to control the space between columns */
 }
 
 /* Footer specific styles */
