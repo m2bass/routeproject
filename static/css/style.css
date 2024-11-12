@@ -225,10 +225,10 @@ footer .row > .col-md-3 {
     border: none; /* Ensure no borders in footer */
 }
 
-/* Optional: Add space between columns in the content area */
+/* Optional: Add space between columns in the content area 
 .content-container .row {
-    gap: 2px; /* Adjust the value to control the space between columns */
-}
+    gap: 2px; /* Adjust the value to control the space between columns 
+}*/
 
 /* Footer specific styles */
 footer {
