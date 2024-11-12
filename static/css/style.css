@@ -63,11 +63,15 @@
 }
 
 .custom-btn2 {
-    display: inline-block;
-    width: auto; /* Will adjust to content width */
-    max-width: 10rem; /* Approximately 160px if root font size is 16px */
-    padding: 0.5rem 1rem; /* Scales padding relative to root font size */
-    font-size: 1rem; /* Adjust font size relative to root for better readability */
+    width: 150px; /* Set to your desired width */
+    display: inline-block;  /* Keep buttons from taking full width */
+    background-color: #FDA0A6;
+}
+
+.custom-btn2:hover {
+    width: 150px; /* Set to your desired width */
+    display: inline-block;  /* Keep buttons from taking full width */
+    background-color:#A7112A;
 }
 
 .button-container {
