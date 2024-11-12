@@ -7,8 +7,8 @@
     <div class="row">
         
         <!-- Route Dropdowns Column -->
-        <div class="col-lg-4 col-md-3">
-            <h1>Custom Routes</h1>
+        <div class="col-lg-6 col-md-3">
+            <h1>Routes</h1>
             
             <!-- Route to NSCC Dropdown -->
             <div class="dropdown-container">
@@ -46,8 +46,18 @@
             <button type="submit" class="search-button">Search Routes</button>
         </div>
         
+          
+        <!-- Static Map Image Column -->
+        <div class="col-lg-6 col-md-3">
+            <h1>Map</h1>
+            <div class="map-container">
+                <img src="/static/route/images/nscc-map.jpg" alt="NSCC Location Map" class="map-image">
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <!-- Routes Table Column -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg col-md">
             <h1>Routes List</h1>
             <table class="route-table">
                 <thead>
@@ -77,14 +87,6 @@
             
             <!-- Add New Route Button -->
             <a href="{% url 'route_create' %}" class="create-route-button">Create Your Own Route</a>
-        </div>
-        
-        <!-- Static Map Image Column -->
-        <div class="col-lg-4 col-md-3">
-            <h1>Map</h1>
-            <div class="map-container">
-                <img src="/static/route/images/nscc-map.jpg" alt="NSCC Location Map" class="map-image">
-            </div>
         </div>
     </div>
 </div>
