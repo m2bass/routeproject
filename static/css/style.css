@@ -41,7 +41,6 @@
 .btn-primary:hover {
     color: #fff; /* Text color on hover */
     background-color: #A7112A; /* Slightly darker shade for hover effect */
-    border-color: #A7112A; /* Slightly darker border for hover effect */
 }
 
 .btn-pry {
@@ -56,6 +55,18 @@
     background-color: #A7112A; /* Background color */
     width: 150px;
 }
+
+.btn {
+    color: #232A30; /* Text color */
+    background-color: #FDA0A6; /* Background color */
+}
+
+.btn:hover {
+    color: #232A30; /* Text color */
+    background-color:#A7112A; /* Background color */
+}
+
+
 
 .custom-btn {
     width: 100px; /* Set to your desired width */
