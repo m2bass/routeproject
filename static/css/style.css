@@ -62,6 +62,14 @@
     display: inline-block;  /* Keep buttons from taking full width */
 }
 
+.custom-btn2 {
+    display: inline-block;
+    width: auto; /* Will adjust to content width */
+    max-width: 10rem; /* Approximately 160px if root font size is 16px */
+    padding: 0.5rem 1rem; /* Scales padding relative to root font size */
+    font-size: 1rem; /* Adjust font size relative to root for better readability */
+}
+
 .button-container {
     text-align: center; /* To center the buttons within their container, use text alignment.*/
 }
