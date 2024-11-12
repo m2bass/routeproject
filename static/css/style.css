@@ -153,7 +153,7 @@ footer {
 .search-button:hover {
     padding: 10px 20px;
     background-color:#A7112A;
-    color:#FDA0A6;
+    color:#fff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -196,7 +196,7 @@ footer {
     display: inline-block;
     padding: 10px 20px;
     background-color:#A7112A;
-    color:#FDA0A6;
+    color:#fff;
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
@@ -281,4 +281,12 @@ footer .col-md-3 {
 .route-list-row {
     border-top: 2px solid #000;  /* Change color and thickness as needed */
     padding-top: 20px;            /* Add space above the table */
+}
+
+.route-table tr:nth-child(odd) {
+    background-color: #FDE2E3; /* Light color for odd rows */
+}
+
+.route-table tr:nth-child(even) {
+    background-color: #FFFFFF; /* Light color or white for even rows */
 }
