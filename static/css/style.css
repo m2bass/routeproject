@@ -283,10 +283,16 @@ footer .col-md-3 {
     padding-top: 20px;            /* Add space above the table */
 }
 
-.route-table tr:nth-child(odd) {
+.route-table thead th {
+    background-color: initial; /* Removes the background color from the header */
+    color: #111; /* Optional: Set text color for the header */
+    font-weight: bold; /* Optional: Make the header text bold */
+}
+
+.route-table tbody tr:nth-child(odd) {
     background-color: #FDE2E3; /* Light color for odd rows */
 }
 
-.route-table tr:nth-child(even) {
+.route-table tbody tr:nth-child(even) {
     background-color: #FFFFFF; /* Light color or white for even rows */
 }
