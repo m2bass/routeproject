@@ -6,6 +6,18 @@
   <h1>Add New Route</h1>
   <form method="post">
     {% csrf_token %}
+
+    <label for="route_name">Route Name:</label>
+    <input type="text" id="route_name" name="route_name" required><br><br>
+
+    <label for="origin">Origin:</label>
+    <input type="text" id="origin" name="origin" required><br><br>
+
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination" required><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea><br><br>
     
     <label for="short_name">Route Short Name:</label>
     <input type="text" id="short_name" name="route_short_name" required><br><br>
