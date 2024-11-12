@@ -233,7 +233,7 @@ footer .row > .col-md-3 {
 /* Footer specific styles */
 footer {
     border: none; /* Remove any border from the footer */
-    padding: 20px 0; /* Add padding to footer */
+    /*padding: 20px 0; /* Add padding to footer */
 }
 
 footer .col-md-3 {
