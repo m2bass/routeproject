@@ -63,9 +63,10 @@
 }
 
 .custom-btn2 {
-    width: 150px; /* Set to your desired width */
+    width: auto; /* Set to your desired width */
     display: inline-block;  /* Keep buttons from taking full width */
-    background-color: #FDA0A6;
+    max-width: 13rem;
+    
 }
 
 .custom-btn2:hover {
