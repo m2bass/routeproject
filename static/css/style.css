@@ -58,8 +58,12 @@
 }
 
 .custom-btn {
-    padding: 5px 10px;    /* Smaller padding */
-    font-size: 0.875rem;
+    width: 100px; /* Set to your desired width */
+    display: inline-block;  /* Keep buttons from taking full width */
+}
+
+.button-container {
+    text-align: center; /* To center the buttons within their container, use text alignment.*/
 }
 
 .custom-btn.btn-primary {

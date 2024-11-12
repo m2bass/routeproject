@@ -42,8 +42,11 @@
                 </select>
             </div>
 
-            <!-- Search/Submit Button -->
+            <div class="div button-container">
+                <!-- Search/Submit Button -->
             <button type="submit" class="search-button custom-btn">Search Routes</button>
+            </div>
+            
         </div>
         
           
@@ -84,9 +87,11 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="button-container">
+                <!-- Add New Route Button -->
+                <a href="{% url 'route_create' %}" class="create-route-button custom-btn">Create Your Own Route</a>
+            </div>
             
-            <!-- Add New Route Button -->
-            <a href="{% url 'route_create' %}" class="create-route-button custom-btn">Create Your Own Route</a>
         </div>
     </div>
 </div>
