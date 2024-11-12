@@ -239,3 +239,8 @@ footer {
 footer .col-md-3 {
     border: none; /* Remove border from footer columns */
 }
+
+.route-list-row {
+    border-top: 2px solid #000;  /* Change color and thickness as needed */
+    padding-top: 20px;            /* Add space above the table */
+}
