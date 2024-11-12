@@ -65,14 +65,12 @@
 .custom-btn2 {
     width: auto; /* Set to your desired width */
     display: inline-block;  /* Keep buttons from taking full width */
-    max-width: 13rem;
-    
+    max-width: 13rem;    
 }
 
 .custom-btn2:hover {
-    width: 150px; /* Set to your desired width */
+    width: auto; /* Set to your desired width */
     display: inline-block;  /* Keep buttons from taking full width */
-    background-color:#A7112A;
 }
 
 .button-container {
