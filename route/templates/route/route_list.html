@@ -103,7 +103,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="routeCreateForm" action="{% url 'route_create' %}" method="POST">
+                            <form action="{% url 'route_create' %}" method="POST">
                                 {% csrf_token %}
 
                                 <!-- Form Fields -->
@@ -144,31 +144,3 @@
     </div>
 </div>
 {% endblock %}
-
-{% block scripts %}
-    <!-- AJAX script -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#routeCreateForm').on('submit', function (event) {
-                event.preventDefault(); // Prevents default form submission
-
-                let formData = $(this).serialize(); // Serialize form data
-
-                $.ajax({
-                    type: 'POST',
-                    url: $(this).attr('action'),
-                    data: formData,
-                    success: function (response) {
-                        $('#createRouteModal').modal('hide'); // Close modal on success
-                        location.reload(); // Reload the page to update route list
-                    },
-                    error: function (xhr, status, error) {
-                        console.error("Error:", error);
-                        alert("An error occurred. Please try again.");
-                    }
-                });
-            });
-        });
-    </script>
-{% endblock scripts %}
