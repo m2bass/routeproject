@@ -1,4 +1,4 @@
-{% load static %}  <!-- Add this line at the top -->
+{% load static %}  <!-- Ensure this line is at the top -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-top">
             <div class="container"> <!-- Change to container for centering -->
                 <!-- Left Section: Logo -->
-                <a class="navbar-brand" href="home.html">
+                <a class="navbar-brand" href="{% url 'home' %}">
                     <img src="{% static 'route/images/logo.svg' %}" alt="Logo" width="271" height="60">
                 </a>
 
@@ -63,8 +63,7 @@
         {% block content %}
         <!-- Homepage-specific content can go here -->
         <section class="row">
-            <div class="col-md-4
-             d-flex flex-column justify-content-center">
+            <div class="col-md-4 d-flex flex-column justify-content-center">
                 <h1 class="display-5 blue-text fw-bold">WELCOME TO</h1>
                 <h1 class="display-3 bold-red-text">RoutesApp</h1>
                 <h5 class="blue-text py-2">Your journey starts here!</h5>
@@ -81,50 +80,43 @@
 
     <!-- Footer -->
     <footer id="main-footer">
-        <div class= "bg-footer-red">
+        <div class="bg-footer-red">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 ml-auto">
+                <div class="row text-center">
+                    <div class="col-md-3">
                         <p>CONTACT:</p>
                         <ul class="list-unstyled">
                           <li>
                             <i class="fas fa-envelope"></i> 
-                            <a href="mailto:example@email.com">routes@routesapp.com</a>
+                            <a href="mailto:routes@routesapp.com">routes@routesapp.com</a>
                           </li>
                           <li>
-                            <i class="fas fa-square-phone"></i> 
+                            <i class="fas fa-phone"></i> 
                             <a href="tel:+1234567890">+1 (234) 567-890</a>
                           </li>
                           <li>
-                            <i class="fas fa-map-location-dot"></i> 
+                            <i class="fas fa-map-marker-alt"></i> 
                             123 Street Name, City, Country
                           </li>
                         </ul>
-                      </div>
-                      
-                  <div class="col-md-3 ml-auto">
-                    <a href="#">
-                      Privacy Policy
-                    </a>
-                  </div>
-                  <div class="col-md-3 ml-auto">
-                    <a href="#">Terms of Use</a>
-                  </div>
-                  <div class="col-md-3 ml-auto">
-                    <p>
-                      Copyright &copy;
-                      <span id="year"></span>
-                    </p>
-                  </div>
-
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">Terms of Use</a>
+                    </div>
+                    <div class="col-md-3">
+                        <p>&copy; <span id="year"></span> RoutesApp</p>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </footer>
 
     <!-- Bootstrap JavaScript via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-Tm8IYYxufQsxLVzImGcE/RANopKdu9eqDEGbTrACXeI3nRtsI6NU4syWmAo69PHm" crossorigin="anonymous"></script>
+
     <script>
         // Get the current year for the copyright
         document.getElementById('year').textContent = new Date().getFullYear();

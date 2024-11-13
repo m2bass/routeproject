@@ -144,3 +144,43 @@
     </div>
 </div>
 {% endblock %}
+
+
+{% block scripts %}
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+       const createRouteForm = document.querySelector("#createRouteModal form");
+
+       createRouteForm.addEventListener("submit", function(event) {
+           event.preventDefault(); // Prevent default form submission
+
+           // Prepare form data
+           const formData = new FormData(createRouteForm);
+           
+           // Send AJAX POST request
+           fetch("{% url 'route_create' %}", {
+               method: "POST",
+               body: formData,
+               headers: {
+                   'X-Requested-With': 'XMLHttpRequest',
+               }
+           })
+           .then(response => response.json())
+           .then(data => {
+               if (data.success) {
+                   // Close modal
+                   let modalElement = document.getElementById("createRouteModal");
+                   let modal = bootstrap.Modal.getInstance(modalElement);
+                   modal.hide();
+
+                   // Update the route list (refresh page or dynamically add new row)
+                   location.reload();
+               } else {
+                   console.log(data.error); // Handle errors here
+               }
+           })
+           .catch(error => console.error('Error:', error));
+       });
+   });
+</script>
+{% endblock %}
