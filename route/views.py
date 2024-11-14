@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Route
 from .forms import RouteForm
+from django.http import JsonResponse
 
 # List all Routes
 def route_list(request):
@@ -14,7 +15,13 @@ def route_create(request):
         form = RouteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('route_list')
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'success': True})
+            else:
+                return redirect('route_list')
+        else:
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'success': False, 'error': form.errors.as_json()})
     else:
         form = RouteForm()
     return render(request, 'route/route_form.html', {'form': form})

@@ -148,39 +148,49 @@
 
 {% block scripts %}
 <script>
-   document.addEventListener("DOMContentLoaded", function() {
-       const createRouteForm = document.querySelector("#createRouteModal form");
+document.addEventListener("DOMContentLoaded", function() {
+    const createRouteForm = document.querySelector("#createRouteModal form");
 
-       createRouteForm.addEventListener("submit", function(event) {
-           event.preventDefault(); // Prevent default form submission
+    createRouteForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
 
-           // Prepare form data
-           const formData = new FormData(createRouteForm);
-           
-           // Send AJAX POST request
-           fetch("{% url 'route_create' %}", {
-               method: "POST",
-               body: formData,
-               headers: {
-                   'X-Requested-With': 'XMLHttpRequest',
-               }
-           })
-           .then(response => response.json())
-           .then(data => {
-               if (data.success) {
-                   // Close modal
-                   let modalElement = document.getElementById("createRouteModal");
-                   let modal = bootstrap.Modal.getInstance(modalElement);
-                   modal.hide();
+        // Prepare form data
+        const formData = new FormData(createRouteForm);
 
-                   // Update the route list (refresh page or dynamically add new row)
-                   location.reload();
-               } else {
-                   console.log(data.error); // Handle errors here
-               }
-           })
-           .catch(error => console.error('Error:', error));
-       });
-   });
+        // Send AJAX POST request
+        fetch("{% url 'route_create' %}", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            }
+        })
+        .then(response => {
+            // Ensure JSON response to prevent unexpected navigation
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // Close modal and refresh page to show new route
+                const modalElement = document.getElementById("createRouteModal");
+                const modal = bootstrap.Modal.getInstance(modalElement);
+                modal.hide();
+                location.reload(); // Refresh page to update route list
+            } else {
+                // Log validation error messages or display on form if needed
+                console.error('Form validation failed:', data.error);
+                alert("Error: Unable to save route. Please check the form and try again.");
+            }
+        })
+        .catch(error => {
+            console.error('Error during fetch:', error);
+            alert("An error occurred while processing your request. Please try again.");
+        });
+    });
+});
+
 </script>
 {% endblock %}
