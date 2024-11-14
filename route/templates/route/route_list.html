@@ -107,6 +107,10 @@
                                 {% csrf_token %}
 
                                 <!-- Form Fields -->
+                                <div class="mb-3">
+                                    <label for="route_id" class="form-label">Route ID:</label>
+                                    <input type="text" class="form-control" id="route_id" name="route_id" required>
+                                </div>
                            
                                 <div class="mb-3">
                                     <label for="route_short_name" class="form-label">Short Name:</label>
@@ -117,6 +121,11 @@
                                     <label for="route_long_name" class="form-label">Long Name:</label>
                                     <input type="text" class="form-control" id="route_long_name" name="route_long_name" required>
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="agency_id" class="form-label">Agency ID:</label>
+                                    <input type="text" class="form-control" id="agency_id" name="agency_id" required>
+                                </div>
                                 
                                 <div class="mb-3">
                                     <label for="destination" class="form-label">Destination:</label>
@@ -126,6 +135,11 @@
                                 <div class="mb-3">
                                     <label for="origin" class="form-label">Origin:</label>
                                     <input type="text" class="form-control" id="origin" name="origin" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="route_type" class="form-label">Route Type:</label>
+                                    <input type="text" class="form-control" id="route_type" name="route_type" required>
                                 </div>
 
                                 <div class="mb-3">
