@@ -1,3 +1,7 @@
+body {
+    font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .bg-top {
     background-color: #FDE2E3;
 }
@@ -296,3 +300,6 @@ footer .col-md-3 {
 .route-table tbody tr:nth-child(even) {
     background-color: #FFFFFF; /* Light color or white for even rows */
 }
+
+
+  

@@ -3,13 +3,25 @@
 {% block title %}Delete Route{% endblock %}  <!-- Optional: Title for the page -->
 
 {% block content %}
-    <h1>Delete Route</h1>
-
-    <h2>Are you sure you want to delete "{{ route.route_short_name }}"?</h2>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Yes, delete</button>
-    </form>
-    
-    <a href="{% url 'route_list' %}">Cancel</a>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="pb-5">Delete Route</h1>
+                <h2>Are you sure you want to delete "{{ route.route_short_name }}"?</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="flex justify-content-between mt-5">
+                        <button type="submit" class="btn btn-pry custom-btn2 align-self-center">Yes, delete</button>
+                        <a href="{% url 'route_list' %}" class="btn btn-dark custom-btn mx-1 align-self-center">Cancel</a>
+                    </div>                    
+                </form>                
+                
+            </div>
+            <div class="col-md-6">
+                <img src="/static/route/images/hero2.svg" alt="Hero Image">
+                
+            </div>
+        </div>
+    </div>
+   
 {% endblock %}

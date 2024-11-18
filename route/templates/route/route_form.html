@@ -1,16 +1,41 @@
 {% extends 'home.html' %}  <!-- Ensure this extends the correct path to home.html -->
 
+{% load static %}  <!-- Correctly load the static files at the top -->
+
 {% block title %}Create or Update Route{% endblock %}
 
 {% block content %}
-    <h1>{% if form.instance.pk %}Update Route{% else %}Create Route{% endif %}</h1>
+    <section class="row py-5">
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <!-- Existing form content -->
+            <h1>{% if form.instance.pk %}
+                    Update Route
+                {% else %}
+                    Create Route
+                {% endif %}
+            </h1>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}  <!-- This renders the form fields automatically -->
+            <form method="post" class="form-group p-4 border rounded shadow-sm mt-5 ">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.as_p }}  <!-- This renders the form fields automatically -->
+                </div>
 
-        <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
-    </form>
-
-    <a href="{% url 'route_list' %}">Cancel</a>
+                <!-- Buttons aligned side by side -->
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="submit" class="btn btn-pry custom-btn2 align-self-center">
+                        {% if form.instance.pk %}
+                            Update
+                        {% else %}
+                            Create
+                        {% endif %}
+                    </button>
+                    <a href="{% url 'route_list' %}" class="btn btn-dark custom-btn2 align-self-center">Cancel</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 pt-5">
+            <img src="{% static 'route/images/hero2.svg' %}" alt="Hero Image" class="img-fluid">
+        </div>
+    </section>
 {% endblock %}

@@ -60,7 +60,7 @@
     </div>
     <div class="row mt-4 border-top">
         <!-- Routes Table Column -->
-        <div class="col-lg col-md">
+        <div class="col-lg col-md pt-5">
             <h1>Routes List</h1>
             <table class="route-table">
                 <thead>
@@ -87,141 +87,12 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <div class="button-container text-center">
-                <!-- Add New Route Button to Trigger Modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createRouteModal">
-                    Create Your Own Route
-                </button>
+            <div class="button-container  custom-btn2 text-center">
+                <!-- Add New Route Button -->
+                <a href="{% url 'route_create' %}" class="create-route-button">Create Your Own Route</a>
             </div>
-            
-            <!-- Create Route Modal -->
-            <div class="modal fade" id="createRouteModal" tabindex="-1" aria-labelledby="createRouteModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="createRouteModalLabel">Create a New Route</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="{% url 'route_create' %}" method="POST">
-                                {% csrf_token %}
-
-                                <!-- Form Fields -->
-                                <div class="mb-3">
-                                    <label for="route_id" class="form-label">Route ID:</label>
-                                    <input type="text" class="form-control" id="route_id" name="route_id" required>
-                                </div>
-                           
-                                <div class="mb-3">
-                                    <label for="route_short_name" class="form-label">Short Name:</label>
-                                    <input type="text" class="form-control" id="route_short_name" name="route_short_name" required>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="route_long_name" class="form-label">Long Name:</label>
-                                    <input type="text" class="form-control" id="route_long_name" name="route_long_name" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="agency_id" class="form-label">Agency ID:</label>
-                                    <input type="text" class="form-control" id="agency_id" name="agency_id" required>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="destination" class="form-label">Destination:</label>
-                                    <input type="text" class="form-control" id="destination" name="destination" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="origin" class="form-label">Origin:</label>
-                                    <input type="text" class="form-control" id="origin" name="origin" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="route_type" class="form-label">Route Type:</label>
-                                    <input type="text" class="form-control" id="route_type" name="route_type" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="description" class="form-label">Description:</label>
-                                    <input type="text" class="form-control" id="description" name="description" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Save Route</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             
         </div>
     </div>
 </div>
-{% endblock %}
-
-
-{% block scripts %}
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const createRouteForm = document.querySelector("#createRouteModal form");
-
-    if (createRouteForm) {
-        createRouteForm.addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Prepare form data
-            const formData = new FormData(createRouteForm);
-
-            // Send AJAX POST request
-            fetch("{% url 'route_create' %}", {
-                method: "POST",
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.success) {
-                    // Hide modal
-                    const modalElement = document.getElementById("createRouteModal");
-                    const modal = bootstrap.Modal.getInstance(modalElement);
-                    modal.hide();
-
-                    // Clear the form
-                    createRouteForm.reset();
-
-                    // Dynamically add the new route to the table
-                    const routeTableBody = document.querySelector(".route-table tbody");
-
-                    const newRow = document.createElement("tr");
-                    newRow.innerHTML = `
-                        <td>${data.route.route_short_name}</td>
-                        <td>${data.route.route_long_name}</td>
-                        <td>
-                            <a href="${data.route.update_url}">Edit</a> | 
-                            <a href="${data.route.delete_url}">Delete</a>
-                        </td>
-                    `;
-                    routeTableBody.appendChild(newRow);
-
-                } else {
-                    // Show error to user if form submission fails
-                    alert("Form submission failed. Please check the required fields and try again.");
-                }
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-                alert("An error occurred. Please try again.");
-            });
-        });
-    }
-});
-
-</script>
 {% endblock %}

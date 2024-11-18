@@ -1,5 +1,7 @@
 {% extends 'home.html' %}  <!-- Ensure this is pointing to the correct home template -->
 
+{% load static %}  <!-- Load static files -->
+
 {% block title %}Add New Route{% endblock %}
 
 {% block content %}
@@ -15,6 +17,6 @@
 
     <button type="submit">Create Route</button>
   </form>
-  
-  <a href="{% url 'route_list' %}">Cancel</a>
+
+  <a href="{% url 'route_list' %}">Cancel</a>  
 {% endblock %}
