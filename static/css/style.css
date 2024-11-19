@@ -1,5 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .bg-top {
@@ -245,6 +252,7 @@ footer {
 
 footer {
     color: #FDE2E3;
+    margin-top: auto;
 }
 
 #main-footer a {
@@ -301,5 +309,6 @@ footer .col-md-3 {
     background-color: #FFFFFF; /* Light color or white for even rows */
 }
 
-
-  
+main {
+    flex: 1;
+} 
